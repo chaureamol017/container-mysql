@@ -17,5 +17,28 @@ services:
     volumes:
       - db_data:/var/lib/mysql
 
+  api:
+    container_name: api
+    image: spring-boot-rest-demo
+    environment:
+      - DB_SERVER=db
+    ports:
+      - "8080:8080"
+    build:
+      context: ./spring-boot-rest-demo
+      dockerfile: Dockerfile
+    depends_on:
+      - db
+
+#  ui:
+#    container_name: ui
+#    build: ./angular-demo
+#    ports:
+#      - "4200:4200"
+#    volumes:
+#      - application_data:/usr/src/app
+#    command: >
+#      bash -c "npm start"
+
 volumes:
   db_data:

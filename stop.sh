@@ -1,5 +1,6 @@
 docker-compose stop
-docker rm local-db
+docker rm db
+docker rm api
 
 #docker stop some-mysql
 #docker rm some-mysql
