@@ -96,7 +96,8 @@
     </dependencies>
 
     <build>
-        <finalName>spring-boot-rest-demo</finalName>
+        <finalName>${project.artifactId}</finalName>
+<!--        <defaultGoal>spring-boot:repackage</defaultGoal>-->
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
