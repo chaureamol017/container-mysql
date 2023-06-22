@@ -4,4 +4,5 @@ cd ..
 
 docker-compose up -d
 
-#docker run --name some-mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql
+docker exec -it db mysql -u root -pmy-secret-pw -e -p 3306:3306 "GRANT ALL PRIVILEGES ON *.* TO 'demo'@'%';"
+
